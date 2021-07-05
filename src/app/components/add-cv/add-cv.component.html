@@ -1,0 +1,83 @@
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+
+  <form [formGroup]="registerForm">
+ 
+     <div class="form sign-up">
+         <label>
+       <h1>Add Cv </h1>
+         </label>
+       <label>
+       
+           <input type="text" formControlName="nom" placeholder="nom" class="form-control" 
+           [ngClass]="{ 'is-invalid': Change && M.nom.errors }" />
+           <div *ngIf="Change && M.nom.errors" class="invalid-feedback">
+               <div *ngIf="M.nom.errors.required" >Nom is required</div>
+           </div>
+       </label>
+       <label>
+         
+           <input type="text" formControlName="prenom"  required class="form-control" placeholder="prenom"  
+            [ngClass]="{ 'is-invalid': Change && M.prenom.errors }" />
+           <div *ngIf="Change && M.prenom.errors" class="invalid-feedback">
+               <div *ngIf="M.prenom.errors.required" >prenom is required</div>
+               <div *ngIf="M.prenom.errors.pattern" >Not Valid prenom</div>
+              
+           </div>
+       </label>
+ 
+       <label>
+         
+         <input type="text" formControlName="email"  required class="form-control" placeholder="email"  
+          [ngClass]="{ 'is-invalid': Change && M.email.errors }" />
+         <div *ngIf="Change && M.email.errors" class="invalid-feedback">
+             <div *ngIf="M.email.errors.required" >email is required</div>
+             <div *ngIf="M.email.errors.pattern" >Not Valid email</div>
+            
+         </div>
+     </label>
+       <label>
+        
+           <input type="text" placeholder="numTel" formControlName="numTel" class="form-control"
+            [ngClass]="{ 'is-invalid': Change && M.numTel.errors }" />
+           <div *ngIf="Change && M.numTel.errors" class="invalid-feedback">
+               <div *ngIf="M.numTel.errors.required" >Num Tel is required</div>
+              
+           </div>
+       </label>
+       <label>
+        
+           <input type="text" formControlName="addresse" placeholder="addresse" 
+           class="form-control" [ngClass]="{ 'is-invalid': Change && M.addresse.errors }" />
+           <div *ngIf="Change && M.addresse.errors" class="invalid-feedback">
+               <div *ngIf="M.addresse.errors.required" c>addresse is required</div>
+               
+           </div>
+       </label>
+ 
+       <label>
+        
+         <input type="text" formControlName="formation" placeholder="formation" 
+         class="form-control" [ngClass]="{ 'is-invalid': Change && M.formation.errors }" />
+         <div *ngIf="Change && M.formation.errors" class="invalid-feedback">
+             <div *ngIf="M.formation.errors.required" c>formation is required</div>
+             
+         </div>
+     </label>
+
+     
+     <label>
+        
+        <input type="text" formControlName="niveauEtude" placeholder="niveauEtude" 
+        class="form-control" [ngClass]="{ 'is-invalid': Change && M.niveauEtude.errors }" />
+        <div *ngIf="Change && M.niveauEtude.errors" class="invalid-feedback">
+            <div *ngIf="M.niveauEtude.errors.required" c>niveauEtdude is required</div>
+            
+        </div>
+    </label>
+    
+      
+       <button type="button" (click)="addCv()" class="submit">addCv</button>
+     </div>
+   </form> 
+ 

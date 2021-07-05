@@ -1,0 +1,34 @@
+<table id="table" class="table">
+    <thead >
+      <tr>
+        <th scope="col">email</th>
+        <th scope="col">prenom</th>
+        <th scope="col">nom</th>
+        <th scope="col">numTel</th>
+        <th scope="col">addresse</th>
+        <th scope="col">ville</th>
+        <th scope="col">niveauEtude</th>
+        <th scope="col">formation</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let cv of listCv">
+      <tr>
+       
+        <td>{{cv.email}}</td>
+        <td>{{cv.prenom}}</td>
+        <td>{{cv.nom}}</td>
+        <td>{{cv.numTel}}</td>
+        <td>{{cv.addresse}}</td>
+        <td>{{cv.ville}}</td>
+        <td>{{cv.niveauEtude}}</td>
+        <td>{{cv.formation}}</td>
+        
+        <button class="btn btn-danger" (click)="deleteCv(cv.id)" >Delete</button> &nbsp;
+        <button class="btn btn-success" routerLink="/addCv">AddCv</button>
+        <button class="btn btn-warning" (click)="dawnolad()" >dawnloadPdf</button>
+      </tr>
+      
+    </tbody>
+  </table>
+
